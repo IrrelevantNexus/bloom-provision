@@ -20,10 +20,10 @@ So I created just that, an Ansible playbook where you just add your nodes to a i
 
 Prepare your local environment (or wherever you deploy this from) with the dependencies we need. This will install a Virtual Python environment and download Python, Pip and [Ansible](https://www.ansible.com) and make those available in your `$PATH` so you can execute them.
 
-1. Clone the K3S Ansible repository from [Github](https://github.com/pixelpiloten/k3s-ansible).
+1. Clone the K3S Ansible repository from [Github](https://github.com/IrrelevantNexus/k3s-ansible).
 
     ```bash
-    $ git clone git@github.com:pixelpiloten/k3s-ansible.git
+    $ git clone git@github.com:IrrelevantNexus/k3s-ansible.git
     ```
 
 2. Go to the `ansible` directory and create your Virtual Python environment.
@@ -88,7 +88,7 @@ You are now ready to install K3S on your servers. The Ansible playbook will go t
 1. Run the Ansible playbook and supply the sudo password when Ansible asks for it.
 
     ```bash
-    $ ansible-playbook -i inventory playbook.yml --ask-become-pass
+    $ sudo ansible-playbook -i inventory playbook.yml --ask-become-pass
     ```
 
 2. When the playbook is done you can copy the Kubeconfig-file `/tmp/kubeconfig.yaml` to your `~/.kube/config` or where ever you want to keep it, BUT you need to modify the the `server` hostname to whatever your `kubernetes_master_server` is. (PS. Do not use the content below, use the `/tmp/kubeconfig.yaml` that got generated locally)
