@@ -1,5 +1,4 @@
 ansible/venv
-ansible/inventory
 .vagrant
 *.log
 ansible/*.log

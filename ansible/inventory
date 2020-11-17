@@ -1,0 +1,84 @@
+all:
+    vars:
+        ansible_python_interpreter: /usr/bin/python3
+        k3s_version: v1.15.3
+        kubernetes_master_server: https://192.168.2.201:6443
+        install_user: vagrant
+        allowed_kubernetes_access:
+            - 192.168.2.200
+            - 192.168.2.201
+    children:
+        k3scluster:
+            hosts:
+                node01:
+                    ansible_ssh_host: am-master01.mikerlilly.com
+                    ansible_ssh_user: vagrant
+                    ansible_ssh_port: 22
+                    ansible_ssh_private_key_file: ../keys/am-master
+                    hostname_alias: am-master01
+                    kubernetes_role: master
+                    node_ip: 192.168.2.201
+                node02:
+                    ansible_ssh_host: am-node02.mikerlilly.com
+                    ansible_ssh_user: vagrant
+                    ansible_ssh_port: 22
+                    ansible_ssh_private_key_file: ../keys/am-node
+                    hostname_alias: am-node02
+                    kubernetes_role: worker
+                    node_ip: 192.168.2.202
+                node03:
+                    ansible_ssh_host: am-node03.mikerlilly.com
+                    ansible_ssh_user: vagrant
+                    ansible_ssh_port: 22
+                    ansible_ssh_private_key_file: ../keys/am-node
+                    hostname_alias: am-node03
+                    kubernetes_role: worker
+                    node_ip: 192.168.2.203
+                node04:
+                    ansible_ssh_host: am-node04.mikerlilly.com
+                    ansible_ssh_user: vagrant
+                    ansible_ssh_port: 22
+                    ansible_ssh_private_key_file: ../keys/am-node
+                    hostname_alias: am-node03
+                    kubernetes_role: worker
+                    node_ip: 192.168.2.204
+                node05:
+                    ansible_ssh_host: am-node05.mikerlilly.com
+                    ansible_ssh_user: vagrant
+                    ansible_ssh_port: 22
+                    ansible_ssh_private_key_file: ../keys/am-node
+                    hostname_alias: am-node05
+                    kubernetes_role: worker
+                    node_ip: 192.168.2.205
+                node06:
+                    ansible_ssh_host: am-node06.mikerlilly.com
+                    ansible_ssh_user: vagrant
+                    ansible_ssh_port: 22
+                    ansible_ssh_private_key_file: ../keys/am-node
+                    hostname_alias: am-node06
+                    kubernetes_role: worker
+                    node_ip: 192.168.2.206
+                node07:
+                    ansible_ssh_host: am-node07.mikerlilly.com
+                    ansible_ssh_user: vagrant
+                    ansible_ssh_port: 22
+                    ansible_ssh_private_key_file: ../keys/am-node
+                    hostname_alias: am-node07
+                    kubernetes_role: worker
+                    node_ip: 192.168.2.207
+                node08:
+                    ansible_ssh_host: am-node08.mikerlilly.com
+                    ansible_ssh_user: vagrant
+                    ansible_ssh_port: 22
+                    ansible_ssh_private_key_file: ../keys/am-node
+                    hostname_alias: am-node08
+                    kubernetes_role: worker
+                    node_ip: 192.168.2.208
+                node09:
+                    ansible_ssh_host: am-node09.mikerlilly.com
+                    ansible_ssh_user: vagrant
+                    ansible_ssh_port: 22
+                    ansible_ssh_private_key_file: ../keys/am-node
+                    hostname_alias: am-node09
+                    kubernetes_role: worker
+                    node_ip: 192.168.2.209

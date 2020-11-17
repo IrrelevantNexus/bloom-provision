@@ -1,6 +1,6 @@
 ---
-  - name: Sets timezone to Stockholm.
-    command: timedatectl set-timezone Europe/Stockholm
+  - name: Sets timezone to Denver.
+    command: timedatectl set-timezone America/Denver
     become: true
 
   - name: Update APT package manager repositories cache.
@@ -16,4 +16,5 @@
       - htop
       - unzip
       - ntp
+      - vim
     become: true
