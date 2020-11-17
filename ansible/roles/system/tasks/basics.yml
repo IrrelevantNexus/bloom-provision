@@ -10,11 +10,6 @@
 
   - name: Installing common tools.
     apt:
-      name: "{{ item }}"
+      name: ['htop', 'unzip', 'ntp', 'vim']
       state: present
-    with_items:
-      - htop
-      - unzip
-      - ntp
-      - vim
     become: true

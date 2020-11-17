@@ -1,4 +1,7 @@
 ansible/venv
+venv/
 .vagrant
 *.log
 ansible/*.log
+*/*.swp
+*/*.tmp
